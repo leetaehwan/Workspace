@@ -1,0 +1,27 @@
+import random as rd
+
+def rps():
+  dict = {'가위':1, '바위':2, '보':3}
+
+  hand = input()
+  if hand not in dict.keys():
+    print('다시')
+    rps()
+  else:
+
+    p_hand = rd.randint(1,3)
+    print("[ 가위 바위 보! ]")
+    print('나 :', hand)
+    value = [i for i in dict if dict[i]==p_hand]
+    print('컴 : ',value[0])
+
+    if p_hand == dict[hand]:
+      print('비겼다')
+      print('다시')
+      rps()
+    elif p_hand - dict[hand] ==1 or p_hand - dict[hand] == -2:
+      print('졌다')
+    else:
+      print('이겼다')
+
+rps()
