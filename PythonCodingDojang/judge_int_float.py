@@ -3,10 +3,12 @@
 
 # 숫자 입력
 def inputNum():
+  number = 0
   try:
     number = int(input())
   except:
     print("잘못된 입력입니다.")
+    inputNum()
   return number
 
 # 소수 판별
@@ -17,11 +19,9 @@ def judgePrimeNum(number):
   for i in range(1,number):
     if number % i == 0:
       count += 1
-  if count ==0:
-    print(f'정수 {number}을 입력하셨습니다.')
-  elif count == 1:
+  if count == 1:
     print(f'소수 {number}을 입력하셨습니다.')
-  elif type(number) == int:
+  elif count >= 2:
     print(f'정수 {number}을 입력하셨습니다.')
 
 # 실행코드
