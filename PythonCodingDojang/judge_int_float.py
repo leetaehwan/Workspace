@@ -4,9 +4,10 @@
 # 숫자 입력
 def inputNum():
   try:
-    return int(input())
+    number = int(input())
   except:
     print("잘못된 입력입니다.")
+  return number
 
 # 소수 판별
 def judgePrimeNum(number):

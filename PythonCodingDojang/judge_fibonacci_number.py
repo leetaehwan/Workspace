@@ -4,8 +4,8 @@ def fib(num):
   elif num == 1:
     return 1
   else:
-    return fib(n-2)+fib(n-1)
-    
+    return fib(num-2)+fib(num-1)
+
 
 
 n = int(input())
