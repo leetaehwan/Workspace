@@ -5,16 +5,21 @@ class Time:
         self.second = second
 
     @classmethod
-    def is_time_valid(clr, tstr):
-      if len(map(int,tstr.split(":"))) ==3:
-        return True
+    def is_time_valid(cls,tstr):
+      if len(list(map(int,tstr.split(":")))) ==3:
+        hour, minute, second = map(int,tstr.split(":"))
+        if hour <= 24 and minute < 60 and second < 60:
+          return True
+        else:
+          return False 
       else:
         return False
-    @staticmethod
-    def from_string(tstr):
-      
-
-
+    @classmethod
+    def from_string(cls,tstr):
+      hour, minute, second = map(int,tstr.split(":"))
+      s = cls(hour, minute, second)
+      return s
+       
     
 time_string = input()
  
